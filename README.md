@@ -39,6 +39,41 @@ pip install numpy pandas matplotlib seaborn librosa scikit-learn xgboost
 
 ---
 
+## 📊 Results Summary
+
+### Random Forest
+- **Accuracy:** ~0.95  
+- Strong, balanced performance across all digits  
+- Precision/Recall/F1 mostly **≥0.93** for digits `0–9`  
+- Slightly lower recall for **digit 3 (0.92)** and **digit 6 (0.87)**  
+- **Overall best-performing model**  
+
+### Decision Tree
+- **Accuracy:** ~0.79  
+- Noticeably weaker than Random Forest  
+- Struggles on **digit 3 (F1 ≈ 0.64)**  
+- Digits `4, 5, 8` perform better (>0.80 F1), but overall **less consistent**  
+
+### XGBoost
+- **Accuracy:** ~0.93  
+- Very competitive with Random Forest  
+- Better precision/recall balance on **digit 3** than Decision Tree  
+- Overall second-best performer  
+
+### Bagging (Decision Tree Base)
+- Performs **between Decision Tree and Random Forest**  
+- Improves stability compared to a single tree, but does not surpass Random Forest  
+
+---
+
+## 🏆 Key Takeaways
+- **Random Forest is the top performer** (~95% accuracy, balanced across digits)  
+- **XGBoost is close behind** (strong alternative for difficult digits)  
+- **Decision Tree alone is not sufficient** (~79% accuracy)  
+- **Bagging helps, but Random Forest remains the most reliable model**  
+
+
+
 ## 🚀 How to run (Notebook)
 1. Open `CloudWalk_Digit_Classification_from_Audio.ipynb` in Jupyter/Colab.
 2. Run the **“Cloning the repository”** cell to fetch FSDD.
